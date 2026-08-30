@@ -1,0 +1,88 @@
+[
+  {
+    "crisis_id": "platform-outage",
+    "name": "Fictional Core Platform Outage",
+    "category": "technology",
+    "severity": 0.82,
+    "evidence_quality": 0.74,
+    "customer_impact": 0.68,
+    "operational_impact": 0.83,
+    "financial_impact": 0.55,
+    "cyber_risk": 0.18,
+    "technology_risk": 0.92,
+    "urgency": 0.94,
+    "unknowns": 0.32,
+    "options": [
+      {"id":"contain-recover","name":"Contain and recover primary platform","speed":0.88,"reversibility":0.86,"cost":0.42,"irreversibility":0.15,"benefit":{"technology_risk":0.82,"operational_impact":0.72,"customer_impact":0.6,"financial_impact":0.45,"cyber_risk":0.1,"urgency":0.78},"risk":{"technology_risk":0.08,"operational_impact":0.05}},
+      {"id":"activate-fallback","name":"Activate fallback environment","speed":0.72,"reversibility":0.75,"cost":0.64,"irreversibility":0.22,"benefit":{"technology_risk":0.7,"operational_impact":0.8,"customer_impact":0.72,"financial_impact":0.5,"cyber_risk":0.08,"urgency":0.7},"risk":{"technology_risk":0.1,"financial_impact":0.1}},
+      {"id":"freeze-and-investigate","name":"Freeze changes and investigate","speed":0.45,"reversibility":0.95,"cost":0.2,"irreversibility":0.05,"benefit":{"technology_risk":0.45,"operational_impact":0.25,"customer_impact":0.2,"financial_impact":0.2,"cyber_risk":0.15,"urgency":0.25},"risk":{"operational_impact":0.18,"customer_impact":0.15}}
+    ],
+    "injects": [
+      {"name":"Customer impact increases","deltas":{"customer_impact":0.15,"urgency":0.05}},
+      {"name":"Fallback validation improves evidence","deltas":{"evidence_quality":0.12,"unknowns":-0.12}}
+    ]
+  },
+  {
+    "crisis_id": "cyber-disruption",
+    "name": "Fictional Cyber Disruption",
+    "category": "cyber",
+    "severity": 0.9,
+    "evidence_quality": 0.58,
+    "customer_impact": 0.52,
+    "operational_impact": 0.66,
+    "financial_impact": 0.48,
+    "cyber_risk": 0.96,
+    "technology_risk": 0.7,
+    "urgency": 0.96,
+    "unknowns": 0.61,
+    "options": [
+      {"id":"isolate","name":"Isolate affected zone","speed":0.9,"reversibility":0.72,"cost":0.32,"irreversibility":0.2,"benefit":{"cyber_risk":0.88,"technology_risk":0.65,"operational_impact":0.42,"customer_impact":0.32,"financial_impact":0.25,"urgency":0.78},"risk":{"operational_impact":0.16,"customer_impact":0.1}},
+      {"id":"controlled-continuity","name":"Maintain controlled service continuity","speed":0.68,"reversibility":0.82,"cost":0.38,"irreversibility":0.16,"benefit":{"cyber_risk":0.48,"technology_risk":0.4,"operational_impact":0.68,"customer_impact":0.62,"financial_impact":0.45,"urgency":0.55},"risk":{"cyber_risk":0.24}},
+      {"id":"full-shutdown","name":"Full service shutdown","speed":0.95,"reversibility":0.62,"cost":0.72,"irreversibility":0.32,"benefit":{"cyber_risk":0.95,"technology_risk":0.8,"operational_impact":0.1,"customer_impact":0.08,"financial_impact":0.1,"urgency":0.82},"risk":{"operational_impact":0.38,"customer_impact":0.35,"financial_impact":0.18}}
+    ],
+    "injects": [
+      {"name":"Evidence of lateral movement appears","deltas":{"cyber_risk":0.03,"evidence_quality":0.15,"unknowns":-0.1}},
+      {"name":"Customer-facing disruption expands","deltas":{"customer_impact":0.18,"operational_impact":0.12}}
+    ]
+  },
+  {
+    "crisis_id": "liquidity-pressure",
+    "name": "Fictional Liquidity Pressure",
+    "category": "finance",
+    "severity": 0.76,
+    "evidence_quality": 0.82,
+    "customer_impact": 0.22,
+    "operational_impact": 0.48,
+    "financial_impact": 0.94,
+    "cyber_risk": 0.05,
+    "technology_risk": 0.3,
+    "urgency": 0.78,
+    "unknowns": 0.24,
+    "options": [
+      {"id":"defer-investment","name":"Defer discretionary investment","speed":0.88,"reversibility":0.92,"cost":0.12,"irreversibility":0.08,"benefit":{"financial_impact":0.72,"operational_impact":0.1,"customer_impact":0.05,"technology_risk":0.05,"cyber_risk":0,"urgency":0.6},"risk":{"technology_risk":0.14}},
+      {"id":"renegotiate-vendors","name":"Renegotiate supplier commitments","speed":0.52,"reversibility":0.78,"cost":0.25,"irreversibility":0.18,"benefit":{"financial_impact":0.62,"operational_impact":0.12,"customer_impact":0.04,"technology_risk":0.08,"cyber_risk":0,"urgency":0.38},"risk":{"operational_impact":0.08}},
+      {"id":"protect-growth","name":"Protect strategic investment and absorb pressure","speed":0.76,"reversibility":0.4,"cost":0.8,"irreversibility":0.62,"benefit":{"financial_impact":0.18,"operational_impact":0.44,"customer_impact":0.28,"technology_risk":0.3,"cyber_risk":0.02,"urgency":0.28},"risk":{"financial_impact":0.24}}
+    ],
+    "injects": [{"name":"Supplier offers temporary relief","deltas":{"financial_impact":-0.12,"unknowns":-0.05}}]
+  },
+  {
+    "crisis_id": "customer-trust",
+    "name": "Fictional Customer Trust Crisis",
+    "category": "customer",
+    "severity": 0.71,
+    "evidence_quality": 0.7,
+    "customer_impact": 0.95,
+    "operational_impact": 0.45,
+    "financial_impact": 0.52,
+    "cyber_risk": 0.12,
+    "technology_risk": 0.3,
+    "urgency": 0.82,
+    "unknowns": 0.36,
+    "options": [
+      {"id":"transparent-response","name":"Transparent customer response and remediation","speed":0.8,"reversibility":0.85,"cost":0.4,"irreversibility":0.15,"benefit":{"customer_impact":0.82,"financial_impact":0.5,"operational_impact":0.35,"technology_risk":0.15,"cyber_risk":0.1,"urgency":0.72},"risk":{"financial_impact":0.08}},
+      {"id":"stabilize-first","name":"Stabilize service before broad communication","speed":0.6,"reversibility":0.88,"cost":0.28,"irreversibility":0.1,"benefit":{"customer_impact":0.46,"financial_impact":0.32,"operational_impact":0.62,"technology_risk":0.38,"cyber_risk":0.08,"urgency":0.42},"risk":{"customer_impact":0.16}},
+      {"id":"commercial-concession","name":"Offer broad commercial concession","speed":0.9,"reversibility":0.3,"cost":0.78,"irreversibility":0.72,"benefit":{"customer_impact":0.72,"financial_impact":0.15,"operational_impact":0.12,"technology_risk":0,"cyber_risk":0,"urgency":0.7},"risk":{"financial_impact":0.28}}
+    ],
+    "injects": [{"name":"Negative sentiment accelerates","deltas":{"customer_impact":0.03,"urgency":0.08}}]
+  }
+]

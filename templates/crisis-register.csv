@@ -1,0 +1,2 @@
+crisis_id,name,category,severity,evidence_quality,unknowns
+DEMO-CR-001,Demo Crisis,technology,0.8,0.7,0.3

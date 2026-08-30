@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CouncilDecision",
+  "type": "object",
+  "required": ["recommended_option","consensus_score","dissent_score","confidence"],
+  "properties": {
+    "recommended_option":{"type":"string"},
+    "consensus_score":{"type":"number","minimum":0,"maximum":100},
+    "dissent_score":{"type":"number","minimum":0,"maximum":100},
+    "confidence":{"type":"number","minimum":0,"maximum":1}
+  }
+}

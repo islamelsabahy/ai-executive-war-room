@@ -1,0 +1,2 @@
+session_id,role,recommendation,confidence,rationale
+DEMO-WR-001,CTO,contain-recover,0.82,Prioritized resilience and reversibility

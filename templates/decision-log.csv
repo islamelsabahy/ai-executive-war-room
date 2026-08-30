@@ -1,0 +1,2 @@
+session_id,crisis_id,recommended_option,consensus_pct,dissent_pct,confidence_pct,executive_review
+DEMO-WR-001,platform-outage,contain-recover,60,40,74,Yes

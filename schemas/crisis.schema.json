@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Crisis",
+  "type": "object",
+  "required": ["crisis_id","name","category","severity","options"],
+  "properties": {
+    "crisis_id": {"type":"string"},
+    "name": {"type":"string"},
+    "category": {"type":"string"},
+    "severity": {"type":"number","minimum":0,"maximum":1},
+    "evidence_quality": {"type":"number","minimum":0,"maximum":1},
+    "unknowns": {"type":"number","minimum":0,"maximum":1},
+    "options": {"type":"array","minItems":2}
+  }
+}

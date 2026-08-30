@@ -1,0 +1,87 @@
+{
+  "CTO": {
+    "weights": {
+      "technology_risk": 0.3,
+      "operational_impact": 0.22,
+      "customer_impact": 0.13,
+      "financial_impact": 0.1,
+      "cyber_risk": 0.1,
+      "urgency": 0.15
+    },
+    "risk_appetite": 0.55,
+    "priorities": [
+      "resilience",
+      "reversibility",
+      "architecture integrity",
+      "recovery speed"
+    ]
+  },
+  "CFO": {
+    "weights": {
+      "financial_impact": 0.38,
+      "operational_impact": 0.16,
+      "customer_impact": 0.12,
+      "technology_risk": 0.08,
+      "cyber_risk": 0.08,
+      "urgency": 0.18
+    },
+    "risk_appetite": 0.45,
+    "priorities": [
+      "cash exposure",
+      "cost containment",
+      "downside protection",
+      "decision optionality"
+    ]
+  },
+  "COO": {
+    "weights": {
+      "operational_impact": 0.36,
+      "customer_impact": 0.2,
+      "urgency": 0.2,
+      "technology_risk": 0.1,
+      "financial_impact": 0.08,
+      "cyber_risk": 0.06
+    },
+    "risk_appetite": 0.6,
+    "priorities": [
+      "continuity",
+      "execution speed",
+      "ownership",
+      "service restoration"
+    ]
+  },
+  "CISO": {
+    "weights": {
+      "cyber_risk": 0.45,
+      "technology_risk": 0.18,
+      "operational_impact": 0.12,
+      "customer_impact": 0.1,
+      "financial_impact": 0.05,
+      "urgency": 0.1
+    },
+    "risk_appetite": 0.3,
+    "priorities": [
+      "containment",
+      "evidence integrity",
+      "least privilege",
+      "blast-radius reduction"
+    ]
+  },
+  "Product": {
+    "weights": {
+      "customer_impact": 0.42,
+      "operational_impact": 0.18,
+      "financial_impact": 0.12,
+      "technology_risk": 0.1,
+      "cyber_risk": 0.08,
+      "urgency": 0.1
+    },
+    "risk_appetite": 0.58,
+    "priorities": [
+      "customer continuity",
+      "trust",
+      "experience",
+      "recovery transparency"
+    ]
+  }
+}
