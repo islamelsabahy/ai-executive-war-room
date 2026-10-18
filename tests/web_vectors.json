@@ -1,0 +1,397 @@
+[
+ {
+  "crisis_id": "platform-outage",
+  "stages": [
+   {
+    "confidence": 0.83,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "activate-fallback": 0.5215,
+     "contain-recover": 0.5647,
+     "freeze-and-investigate": 0.2354
+    },
+    "recommended_option": "contain-recover",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "contain-recover",
+     "CISO": "contain-recover",
+     "COO": "contain-recover",
+     "CTO": "contain-recover",
+     "Product": "contain-recover"
+    }
+   },
+   {
+    "confidence": 0.83,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "activate-fallback": 0.5476,
+     "contain-recover": 0.5879,
+     "freeze-and-investigate": 0.2431
+    },
+    "recommended_option": "contain-recover",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "contain-recover",
+     "CISO": "contain-recover",
+     "COO": "contain-recover",
+     "CTO": "contain-recover",
+     "Product": "contain-recover"
+    }
+   },
+   {
+    "confidence": 0.92,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "activate-fallback": 0.5476,
+     "contain-recover": 0.5879,
+     "freeze-and-investigate": 0.2431
+    },
+    "recommended_option": "contain-recover",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "contain-recover",
+     "CISO": "contain-recover",
+     "COO": "contain-recover",
+     "CTO": "contain-recover",
+     "Product": "contain-recover"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "cyber-disruption",
+  "stages": [
+   {
+    "confidence": 0.56,
+    "consensus_score": 40.0,
+    "dissent_score": 40.0,
+    "option_scores": {
+     "controlled-continuity": 0.4471,
+     "full-shutdown": 0.2757,
+     "isolate": 0.4815
+    },
+    "recommended_option": "isolate",
+    "red_team_count": 2,
+    "review_required": true,
+    "votes": {
+     "CFO": "controlled-continuity",
+     "CISO": "isolate",
+     "COO": "controlled-continuity",
+     "CTO": "isolate",
+     "Product": "controlled-continuity"
+    }
+   },
+   {
+    "confidence": 0.65,
+    "consensus_score": 40.0,
+    "dissent_score": 40.0,
+    "option_scores": {
+     "controlled-continuity": 0.4493,
+     "full-shutdown": 0.2803,
+     "isolate": 0.4857
+    },
+    "recommended_option": "isolate",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "controlled-continuity",
+     "CISO": "isolate",
+     "COO": "controlled-continuity",
+     "CTO": "isolate",
+     "Product": "controlled-continuity"
+    }
+   },
+   {
+    "confidence": 0.65,
+    "consensus_score": 40.0,
+    "dissent_score": 40.0,
+    "option_scores": {
+     "controlled-continuity": 0.4881,
+     "full-shutdown": 0.2851,
+     "isolate": 0.5071
+    },
+    "recommended_option": "isolate",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "controlled-continuity",
+     "CISO": "isolate",
+     "COO": "controlled-continuity",
+     "CTO": "isolate",
+     "Product": "controlled-continuity"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "liquidity-pressure",
+  "stages": [
+   {
+    "confidence": 0.87,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "defer-investment": 0.3139,
+     "protect-growth": 0.1205,
+     "renegotiate-vendors": 0.2294
+    },
+    "recommended_option": "defer-investment",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "defer-investment",
+     "CISO": "defer-investment",
+     "COO": "defer-investment",
+     "CTO": "defer-investment",
+     "Product": "defer-investment"
+    }
+   },
+   {
+    "confidence": 0.89,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "defer-investment": 0.3011,
+     "protect-growth": 0.1173,
+     "renegotiate-vendors": 0.2183
+    },
+    "recommended_option": "defer-investment",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "defer-investment",
+     "CISO": "defer-investment",
+     "COO": "defer-investment",
+     "CTO": "defer-investment",
+     "Product": "defer-investment"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "customer-trust",
+  "stages": [
+   {
+    "confidence": 0.79,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "commercial-concession": 0.2244,
+     "stabilize-first": 0.3188,
+     "transparent-response": 0.4221
+    },
+    "recommended_option": "transparent-response",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "transparent-response",
+     "CISO": "transparent-response",
+     "COO": "transparent-response",
+     "CTO": "transparent-response",
+     "Product": "transparent-response"
+    }
+   },
+   {
+    "confidence": 0.79,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "commercial-concession": 0.2368,
+     "stabilize-first": 0.3264,
+     "transparent-response": 0.4354
+    },
+    "recommended_option": "transparent-response",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "transparent-response",
+     "CISO": "transparent-response",
+     "COO": "transparent-response",
+     "CTO": "transparent-response",
+     "Product": "transparent-response"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "egp-devaluation",
+  "stages": [
+   {
+    "confidence": 0.76,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "lock-materials": 0.2068,
+     "pause-sales": 0.1458,
+     "reprice-inventory": 0.2799
+    },
+    "recommended_option": "reprice-inventory",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "reprice-inventory",
+     "CISO": "reprice-inventory",
+     "COO": "reprice-inventory",
+     "CTO": "reprice-inventory",
+     "Product": "reprice-inventory"
+    }
+   },
+   {
+    "confidence": 0.76,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "lock-materials": 0.2123,
+     "pause-sales": 0.1499,
+     "reprice-inventory": 0.287
+    },
+    "recommended_option": "reprice-inventory",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "reprice-inventory",
+     "CISO": "reprice-inventory",
+     "COO": "reprice-inventory",
+     "CTO": "reprice-inventory",
+     "Product": "reprice-inventory"
+    }
+   },
+   {
+    "confidence": 0.88,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "lock-materials": 0.2122,
+     "pause-sales": 0.1498,
+     "reprice-inventory": 0.2869
+    },
+    "recommended_option": "reprice-inventory",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "reprice-inventory",
+     "CISO": "reprice-inventory",
+     "COO": "reprice-inventory",
+     "CTO": "reprice-inventory",
+     "Product": "reprice-inventory"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "steel-price-spike",
+  "stages": [
+   {
+    "confidence": 0.8,
+    "consensus_score": 80.0,
+    "dissent_score": 20.0,
+    "option_scores": {
+     "absorb-cost": 0.2827,
+     "escalation-clause": 0.2397,
+     "slow-phase-2": 0.1317
+    },
+    "recommended_option": "absorb-cost",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "escalation-clause",
+     "CISO": "absorb-cost",
+     "COO": "absorb-cost",
+     "CTO": "absorb-cost",
+     "Product": "absorb-cost"
+    }
+   },
+   {
+    "confidence": 0.8,
+    "consensus_score": 80.0,
+    "dissent_score": 20.0,
+    "option_scores": {
+     "absorb-cost": 0.316,
+     "escalation-clause": 0.2601,
+     "slow-phase-2": 0.1387
+    },
+    "recommended_option": "absorb-cost",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "escalation-clause",
+     "CISO": "absorb-cost",
+     "COO": "absorb-cost",
+     "CTO": "absorb-cost",
+     "Product": "absorb-cost"
+    }
+   }
+  ]
+ },
+ {
+  "crisis_id": "collections-delay",
+  "stages": [
+   {
+    "confidence": 0.74,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "bridge-facility": 0.2256,
+     "collections-sprint": 0.2946,
+     "legal-enforcement": 0.0405
+    },
+    "recommended_option": "collections-sprint",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "collections-sprint",
+     "CISO": "collections-sprint",
+     "COO": "collections-sprint",
+     "CTO": "collections-sprint",
+     "Product": "collections-sprint"
+    }
+   },
+   {
+    "confidence": 0.71,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "bridge-facility": 0.235,
+     "collections-sprint": 0.3017,
+     "legal-enforcement": 0.047
+    },
+    "recommended_option": "collections-sprint",
+    "red_team_count": 2,
+    "review_required": true,
+    "votes": {
+     "CFO": "collections-sprint",
+     "CISO": "collections-sprint",
+     "COO": "collections-sprint",
+     "CTO": "collections-sprint",
+     "Product": "collections-sprint"
+    }
+   },
+   {
+    "confidence": 0.85,
+    "consensus_score": 100.0,
+    "dissent_score": 0.0,
+    "option_scores": {
+     "bridge-facility": 0.235,
+     "collections-sprint": 0.3017,
+     "legal-enforcement": 0.047
+    },
+    "recommended_option": "collections-sprint",
+    "red_team_count": 1,
+    "review_required": true,
+    "votes": {
+     "CFO": "collections-sprint",
+     "CISO": "collections-sprint",
+     "COO": "collections-sprint",
+     "CTO": "collections-sprint",
+     "Product": "collections-sprint"
+    }
+   }
+  ]
+ }
+]

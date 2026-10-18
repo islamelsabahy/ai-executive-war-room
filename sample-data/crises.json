@@ -13,14 +13,89 @@
     "urgency": 0.94,
     "unknowns": 0.32,
     "options": [
-      {"id":"contain-recover","name":"Contain and recover primary platform","speed":0.88,"reversibility":0.86,"cost":0.42,"irreversibility":0.15,"benefit":{"technology_risk":0.82,"operational_impact":0.72,"customer_impact":0.6,"financial_impact":0.45,"cyber_risk":0.1,"urgency":0.78},"risk":{"technology_risk":0.08,"operational_impact":0.05}},
-      {"id":"activate-fallback","name":"Activate fallback environment","speed":0.72,"reversibility":0.75,"cost":0.64,"irreversibility":0.22,"benefit":{"technology_risk":0.7,"operational_impact":0.8,"customer_impact":0.72,"financial_impact":0.5,"cyber_risk":0.08,"urgency":0.7},"risk":{"technology_risk":0.1,"financial_impact":0.1}},
-      {"id":"freeze-and-investigate","name":"Freeze changes and investigate","speed":0.45,"reversibility":0.95,"cost":0.2,"irreversibility":0.05,"benefit":{"technology_risk":0.45,"operational_impact":0.25,"customer_impact":0.2,"financial_impact":0.2,"cyber_risk":0.15,"urgency":0.25},"risk":{"operational_impact":0.18,"customer_impact":0.15}}
+      {
+        "id": "contain-recover",
+        "name": "Contain and recover primary platform",
+        "speed": 0.88,
+        "reversibility": 0.86,
+        "cost": 0.42,
+        "irreversibility": 0.15,
+        "benefit": {
+          "technology_risk": 0.82,
+          "operational_impact": 0.72,
+          "customer_impact": 0.6,
+          "financial_impact": 0.45,
+          "cyber_risk": 0.1,
+          "urgency": 0.78
+        },
+        "risk": {
+          "technology_risk": 0.08,
+          "operational_impact": 0.05
+        },
+        "name_ar": "احتواء واستعادة المنصة"
+      },
+      {
+        "id": "activate-fallback",
+        "name": "Activate fallback environment",
+        "speed": 0.72,
+        "reversibility": 0.75,
+        "cost": 0.64,
+        "irreversibility": 0.22,
+        "benefit": {
+          "technology_risk": 0.7,
+          "operational_impact": 0.8,
+          "customer_impact": 0.72,
+          "financial_impact": 0.5,
+          "cyber_risk": 0.08,
+          "urgency": 0.7
+        },
+        "risk": {
+          "technology_risk": 0.1,
+          "financial_impact": 0.1
+        },
+        "name_ar": "تشغيل البيئة الاحتياطية"
+      },
+      {
+        "id": "freeze-and-investigate",
+        "name": "Freeze changes and investigate",
+        "speed": 0.45,
+        "reversibility": 0.95,
+        "cost": 0.2,
+        "irreversibility": 0.05,
+        "benefit": {
+          "technology_risk": 0.45,
+          "operational_impact": 0.25,
+          "customer_impact": 0.2,
+          "financial_impact": 0.2,
+          "cyber_risk": 0.15,
+          "urgency": 0.25
+        },
+        "risk": {
+          "operational_impact": 0.18,
+          "customer_impact": 0.15
+        },
+        "name_ar": "تجميد التغييرات والتحقيق"
+      }
     ],
     "injects": [
-      {"name":"Customer impact increases","deltas":{"customer_impact":0.15,"urgency":0.05}},
-      {"name":"Fallback validation improves evidence","deltas":{"evidence_quality":0.12,"unknowns":-0.12}}
-    ]
+      {
+        "name": "Customer impact increases",
+        "deltas": {
+          "customer_impact": 0.15,
+          "urgency": 0.05
+        },
+        "name_ar": "زيادة تأثر العملاء"
+      },
+      {
+        "name": "Fallback validation improves evidence",
+        "deltas": {
+          "evidence_quality": 0.12,
+          "unknowns": -0.12
+        },
+        "name_ar": "تحسن الأدلة بعد اختبار الاحتياطي"
+      }
+    ],
+    "name_ar": "توقف المنصة الأساسية"
   },
   {
     "crisis_id": "cyber-disruption",
@@ -36,14 +111,90 @@
     "urgency": 0.96,
     "unknowns": 0.61,
     "options": [
-      {"id":"isolate","name":"Isolate affected zone","speed":0.9,"reversibility":0.72,"cost":0.32,"irreversibility":0.2,"benefit":{"cyber_risk":0.88,"technology_risk":0.65,"operational_impact":0.42,"customer_impact":0.32,"financial_impact":0.25,"urgency":0.78},"risk":{"operational_impact":0.16,"customer_impact":0.1}},
-      {"id":"controlled-continuity","name":"Maintain controlled service continuity","speed":0.68,"reversibility":0.82,"cost":0.38,"irreversibility":0.16,"benefit":{"cyber_risk":0.48,"technology_risk":0.4,"operational_impact":0.68,"customer_impact":0.62,"financial_impact":0.45,"urgency":0.55},"risk":{"cyber_risk":0.24}},
-      {"id":"full-shutdown","name":"Full service shutdown","speed":0.95,"reversibility":0.62,"cost":0.72,"irreversibility":0.32,"benefit":{"cyber_risk":0.95,"technology_risk":0.8,"operational_impact":0.1,"customer_impact":0.08,"financial_impact":0.1,"urgency":0.82},"risk":{"operational_impact":0.38,"customer_impact":0.35,"financial_impact":0.18}}
+      {
+        "id": "isolate",
+        "name": "Isolate affected zone",
+        "speed": 0.9,
+        "reversibility": 0.72,
+        "cost": 0.32,
+        "irreversibility": 0.2,
+        "benefit": {
+          "cyber_risk": 0.88,
+          "technology_risk": 0.65,
+          "operational_impact": 0.42,
+          "customer_impact": 0.32,
+          "financial_impact": 0.25,
+          "urgency": 0.78
+        },
+        "risk": {
+          "operational_impact": 0.16,
+          "customer_impact": 0.1
+        },
+        "name_ar": "عزل الأنظمة المصابة"
+      },
+      {
+        "id": "controlled-continuity",
+        "name": "Maintain controlled service continuity",
+        "speed": 0.68,
+        "reversibility": 0.82,
+        "cost": 0.38,
+        "irreversibility": 0.16,
+        "benefit": {
+          "cyber_risk": 0.48,
+          "technology_risk": 0.4,
+          "operational_impact": 0.68,
+          "customer_impact": 0.62,
+          "financial_impact": 0.45,
+          "urgency": 0.55
+        },
+        "risk": {
+          "cyber_risk": 0.24
+        },
+        "name_ar": "استمرار محكوم للعمل"
+      },
+      {
+        "id": "full-shutdown",
+        "name": "Full service shutdown",
+        "speed": 0.95,
+        "reversibility": 0.62,
+        "cost": 0.72,
+        "irreversibility": 0.32,
+        "benefit": {
+          "cyber_risk": 0.95,
+          "technology_risk": 0.8,
+          "operational_impact": 0.1,
+          "customer_impact": 0.08,
+          "financial_impact": 0.1,
+          "urgency": 0.82
+        },
+        "risk": {
+          "operational_impact": 0.38,
+          "customer_impact": 0.35,
+          "financial_impact": 0.18
+        },
+        "name_ar": "إيقاف كامل"
+      }
     ],
     "injects": [
-      {"name":"Evidence of lateral movement appears","deltas":{"cyber_risk":0.03,"evidence_quality":0.15,"unknowns":-0.1}},
-      {"name":"Customer-facing disruption expands","deltas":{"customer_impact":0.18,"operational_impact":0.12}}
-    ]
+      {
+        "name": "Evidence of lateral movement appears",
+        "deltas": {
+          "cyber_risk": 0.03,
+          "evidence_quality": 0.15,
+          "unknowns": -0.1
+        },
+        "name_ar": "ظهور أدلة على انتشار داخلي"
+      },
+      {
+        "name": "Customer-facing disruption expands",
+        "deltas": {
+          "customer_impact": 0.18,
+          "operational_impact": 0.12
+        },
+        "name_ar": "اتساع التأثير على العملاء"
+      }
+    ],
+    "name_ar": "هجوم سيبراني معطِّل"
   },
   {
     "crisis_id": "liquidity-pressure",
@@ -59,11 +210,78 @@
     "urgency": 0.78,
     "unknowns": 0.24,
     "options": [
-      {"id":"defer-investment","name":"Defer discretionary investment","speed":0.88,"reversibility":0.92,"cost":0.12,"irreversibility":0.08,"benefit":{"financial_impact":0.72,"operational_impact":0.1,"customer_impact":0.05,"technology_risk":0.05,"cyber_risk":0,"urgency":0.6},"risk":{"technology_risk":0.14}},
-      {"id":"renegotiate-vendors","name":"Renegotiate supplier commitments","speed":0.52,"reversibility":0.78,"cost":0.25,"irreversibility":0.18,"benefit":{"financial_impact":0.62,"operational_impact":0.12,"customer_impact":0.04,"technology_risk":0.08,"cyber_risk":0,"urgency":0.38},"risk":{"operational_impact":0.08}},
-      {"id":"protect-growth","name":"Protect strategic investment and absorb pressure","speed":0.76,"reversibility":0.4,"cost":0.8,"irreversibility":0.62,"benefit":{"financial_impact":0.18,"operational_impact":0.44,"customer_impact":0.28,"technology_risk":0.3,"cyber_risk":0.02,"urgency":0.28},"risk":{"financial_impact":0.24}}
+      {
+        "id": "defer-investment",
+        "name": "Defer discretionary investment",
+        "speed": 0.88,
+        "reversibility": 0.92,
+        "cost": 0.12,
+        "irreversibility": 0.08,
+        "benefit": {
+          "financial_impact": 0.72,
+          "operational_impact": 0.1,
+          "customer_impact": 0.05,
+          "technology_risk": 0.05,
+          "cyber_risk": 0,
+          "urgency": 0.6
+        },
+        "risk": {
+          "technology_risk": 0.14
+        },
+        "name_ar": "تأجيل الاستثمارات"
+      },
+      {
+        "id": "renegotiate-vendors",
+        "name": "Renegotiate supplier commitments",
+        "speed": 0.52,
+        "reversibility": 0.78,
+        "cost": 0.25,
+        "irreversibility": 0.18,
+        "benefit": {
+          "financial_impact": 0.62,
+          "operational_impact": 0.12,
+          "customer_impact": 0.04,
+          "technology_risk": 0.08,
+          "cyber_risk": 0,
+          "urgency": 0.38
+        },
+        "risk": {
+          "operational_impact": 0.08
+        },
+        "name_ar": "إعادة التفاوض مع الموردين"
+      },
+      {
+        "id": "protect-growth",
+        "name": "Protect strategic investment and absorb pressure",
+        "speed": 0.76,
+        "reversibility": 0.4,
+        "cost": 0.8,
+        "irreversibility": 0.62,
+        "benefit": {
+          "financial_impact": 0.18,
+          "operational_impact": 0.44,
+          "customer_impact": 0.28,
+          "technology_risk": 0.3,
+          "cyber_risk": 0.02,
+          "urgency": 0.28
+        },
+        "risk": {
+          "financial_impact": 0.24
+        },
+        "name_ar": "حماية خطة النمو"
+      }
     ],
-    "injects": [{"name":"Supplier offers temporary relief","deltas":{"financial_impact":-0.12,"unknowns":-0.05}}]
+    "injects": [
+      {
+        "name": "Supplier offers temporary relief",
+        "deltas": {
+          "financial_impact": -0.12,
+          "unknowns": -0.05
+        },
+        "name_ar": "مورد يعرض تسهيلات مؤقتة"
+      }
+    ],
+    "name_ar": "ضغط سيولة"
   },
   {
     "crisis_id": "customer-trust",
@@ -79,10 +297,324 @@
     "urgency": 0.82,
     "unknowns": 0.36,
     "options": [
-      {"id":"transparent-response","name":"Transparent customer response and remediation","speed":0.8,"reversibility":0.85,"cost":0.4,"irreversibility":0.15,"benefit":{"customer_impact":0.82,"financial_impact":0.5,"operational_impact":0.35,"technology_risk":0.15,"cyber_risk":0.1,"urgency":0.72},"risk":{"financial_impact":0.08}},
-      {"id":"stabilize-first","name":"Stabilize service before broad communication","speed":0.6,"reversibility":0.88,"cost":0.28,"irreversibility":0.1,"benefit":{"customer_impact":0.46,"financial_impact":0.32,"operational_impact":0.62,"technology_risk":0.38,"cyber_risk":0.08,"urgency":0.42},"risk":{"customer_impact":0.16}},
-      {"id":"commercial-concession","name":"Offer broad commercial concession","speed":0.9,"reversibility":0.3,"cost":0.78,"irreversibility":0.72,"benefit":{"customer_impact":0.72,"financial_impact":0.15,"operational_impact":0.12,"technology_risk":0,"cyber_risk":0,"urgency":0.7},"risk":{"financial_impact":0.28}}
+      {
+        "id": "transparent-response",
+        "name": "Transparent customer response and remediation",
+        "speed": 0.8,
+        "reversibility": 0.85,
+        "cost": 0.4,
+        "irreversibility": 0.15,
+        "benefit": {
+          "customer_impact": 0.82,
+          "financial_impact": 0.5,
+          "operational_impact": 0.35,
+          "technology_risk": 0.15,
+          "cyber_risk": 0.1,
+          "urgency": 0.72
+        },
+        "risk": {
+          "financial_impact": 0.08
+        },
+        "name_ar": "رد شفاف وسريع"
+      },
+      {
+        "id": "stabilize-first",
+        "name": "Stabilize service before broad communication",
+        "speed": 0.6,
+        "reversibility": 0.88,
+        "cost": 0.28,
+        "irreversibility": 0.1,
+        "benefit": {
+          "customer_impact": 0.46,
+          "financial_impact": 0.32,
+          "operational_impact": 0.62,
+          "technology_risk": 0.38,
+          "cyber_risk": 0.08,
+          "urgency": 0.42
+        },
+        "risk": {
+          "customer_impact": 0.16
+        },
+        "name_ar": "التثبيت أولًا"
+      },
+      {
+        "id": "commercial-concession",
+        "name": "Offer broad commercial concession",
+        "speed": 0.9,
+        "reversibility": 0.3,
+        "cost": 0.78,
+        "irreversibility": 0.72,
+        "benefit": {
+          "customer_impact": 0.72,
+          "financial_impact": 0.15,
+          "operational_impact": 0.12,
+          "technology_risk": 0,
+          "cyber_risk": 0,
+          "urgency": 0.7
+        },
+        "risk": {
+          "financial_impact": 0.28
+        },
+        "name_ar": "تنازل تجاري"
+      }
     ],
-    "injects": [{"name":"Negative sentiment accelerates","deltas":{"customer_impact":0.03,"urgency":0.08}}]
+    "injects": [
+      {
+        "name": "Negative sentiment accelerates",
+        "deltas": {
+          "customer_impact": 0.03,
+          "urgency": 0.08
+        },
+        "name_ar": "تسارع الانطباع السلبي"
+      }
+    ],
+    "name_ar": "أزمة ثقة العملاء"
+  },
+  {
+    "crisis_id": "egp-devaluation",
+    "name": "Fictional EGP Devaluation Shock",
+    "name_ar": "صدمة تعويم الجنيه",
+    "category": "real-estate",
+    "severity": 0.86,
+    "evidence_quality": 0.7,
+    "customer_impact": 0.62,
+    "operational_impact": 0.55,
+    "financial_impact": 0.93,
+    "cyber_risk": 0.05,
+    "technology_risk": 0.1,
+    "urgency": 0.88,
+    "unknowns": 0.45,
+    "options": [
+      {
+        "id": "reprice-inventory",
+        "name": "Reprice unsold inventory immediately",
+        "name_ar": "إعادة تسعير المخزون غير المباع فورًا",
+        "speed": 0.85,
+        "reversibility": 0.55,
+        "cost": 0.25,
+        "irreversibility": 0.4,
+        "benefit": {
+          "financial_impact": 0.75,
+          "urgency": 0.7,
+          "operational_impact": 0.3
+        },
+        "risk": {
+          "customer_impact": 0.25
+        }
+      },
+      {
+        "id": "pause-sales",
+        "name": "Pause launches until prices settle",
+        "name_ar": "وقف الإطلاقات لحين استقرار الأسعار",
+        "speed": 0.7,
+        "reversibility": 0.85,
+        "cost": 0.55,
+        "irreversibility": 0.15,
+        "benefit": {
+          "financial_impact": 0.5,
+          "urgency": 0.4
+        },
+        "risk": {
+          "customer_impact": 0.15,
+          "operational_impact": 0.2
+        }
+      },
+      {
+        "id": "lock-materials",
+        "name": "Pre-buy steel and cement with cash reserve",
+        "name_ar": "تثبيت الحديد والأسمنت بالشراء المسبق من الاحتياطي",
+        "speed": 0.6,
+        "reversibility": 0.3,
+        "cost": 0.8,
+        "irreversibility": 0.7,
+        "benefit": {
+          "financial_impact": 0.6,
+          "operational_impact": 0.65,
+          "urgency": 0.55
+        },
+        "risk": {
+          "financial_impact": 0.15
+        }
+      }
+    ],
+    "injects": [
+      {
+        "name": "Buyers rush to lock old prices",
+        "name_ar": "العملاء يتسابقون لتثبيت الأسعار القديمة",
+        "deltas": {
+          "customer_impact": 0.15,
+          "urgency": 0.07
+        }
+      },
+      {
+        "name": "Central bank signals stability",
+        "name_ar": "البنك المركزي يلمّح لاستقرار السعر",
+        "deltas": {
+          "unknowns": -0.2,
+          "evidence_quality": 0.15
+        }
+      }
+    ]
+  },
+  {
+    "crisis_id": "steel-price-spike",
+    "name": "Fictional Steel Price Spike Mid-Construction",
+    "name_ar": "قفزة أسعار الحديد في منتصف التنفيذ",
+    "category": "real-estate",
+    "severity": 0.74,
+    "evidence_quality": 0.8,
+    "customer_impact": 0.4,
+    "operational_impact": 0.82,
+    "financial_impact": 0.8,
+    "cyber_risk": 0.02,
+    "technology_risk": 0.08,
+    "urgency": 0.72,
+    "unknowns": 0.35,
+    "options": [
+      {
+        "id": "absorb-cost",
+        "name": "Absorb the cost and keep the schedule",
+        "name_ar": "تحمّل الزيادة والحفاظ على الجدول الزمني",
+        "speed": 0.9,
+        "reversibility": 0.6,
+        "cost": 0.85,
+        "irreversibility": 0.3,
+        "benefit": {
+          "operational_impact": 0.8,
+          "customer_impact": 0.6,
+          "urgency": 0.75
+        },
+        "risk": {
+          "financial_impact": 0.3
+        }
+      },
+      {
+        "id": "slow-phase-2",
+        "name": "Slow phase 2 and protect cash",
+        "name_ar": "إبطاء المرحلة الثانية لحماية الكاش",
+        "speed": 0.65,
+        "reversibility": 0.8,
+        "cost": 0.3,
+        "irreversibility": 0.2,
+        "benefit": {
+          "financial_impact": 0.7,
+          "urgency": 0.4
+        },
+        "risk": {
+          "customer_impact": 0.3,
+          "operational_impact": 0.2
+        }
+      },
+      {
+        "id": "escalation-clause",
+        "name": "Invoke contractor escalation clause and renegotiate",
+        "name_ar": "تفعيل بند تحريك الأسعار والتفاوض مع المقاول",
+        "speed": 0.5,
+        "reversibility": 0.7,
+        "cost": 0.45,
+        "irreversibility": 0.25,
+        "benefit": {
+          "financial_impact": 0.55,
+          "operational_impact": 0.5,
+          "urgency": 0.45
+        },
+        "risk": {
+          "operational_impact": 0.15
+        }
+      }
+    ],
+    "injects": [
+      {
+        "name": "Contractor threatens to stop work",
+        "name_ar": "المقاول يهدد بوقف العمل",
+        "deltas": {
+          "operational_impact": 0.12,
+          "urgency": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "crisis_id": "collections-delay",
+    "name": "Fictional Instalment Collections Slowdown",
+    "name_ar": "تباطؤ تحصيل الأقساط",
+    "category": "real-estate",
+    "severity": 0.7,
+    "evidence_quality": 0.65,
+    "customer_impact": 0.5,
+    "operational_impact": 0.45,
+    "financial_impact": 0.85,
+    "cyber_risk": 0.05,
+    "technology_risk": 0.15,
+    "urgency": 0.7,
+    "unknowns": 0.5,
+    "options": [
+      {
+        "id": "collections-sprint",
+        "name": "Collections sprint with rescheduling offers",
+        "name_ar": "حملة تحصيل مع عروض إعادة جدولة",
+        "speed": 0.8,
+        "reversibility": 0.8,
+        "cost": 0.3,
+        "irreversibility": 0.15,
+        "benefit": {
+          "financial_impact": 0.6,
+          "customer_impact": 0.4,
+          "urgency": 0.6
+        },
+        "risk": {}
+      },
+      {
+        "id": "legal-enforcement",
+        "name": "Legal enforcement on bounced cheques",
+        "name_ar": "إجراءات قانونية على الشيكات المرتدة",
+        "speed": 0.4,
+        "reversibility": 0.3,
+        "cost": 0.5,
+        "irreversibility": 0.7,
+        "benefit": {
+          "financial_impact": 0.55,
+          "urgency": 0.3
+        },
+        "risk": {
+          "customer_impact": 0.35
+        }
+      },
+      {
+        "id": "bridge-facility",
+        "name": "Bank bridge facility against receivables",
+        "name_ar": "تسهيل بنكي بضمان المستحقات",
+        "speed": 0.55,
+        "reversibility": 0.6,
+        "cost": 0.7,
+        "irreversibility": 0.35,
+        "benefit": {
+          "financial_impact": 0.8,
+          "operational_impact": 0.4,
+          "urgency": 0.55
+        },
+        "risk": {
+          "financial_impact": 0.1
+        }
+      }
+    ],
+    "injects": [
+      {
+        "name": "Second project launch competes for buyers",
+        "name_ar": "إطلاق منافس يسحب المشترين",
+        "deltas": {
+          "financial_impact": 0.08,
+          "unknowns": 0.1
+        }
+      },
+      {
+        "name": "Payment-portal data clarifies who is late",
+        "name_ar": "بيانات بوابة السداد توضح مين المتأخر",
+        "deltas": {
+          "evidence_quality": 0.2,
+          "unknowns": -0.2
+        }
+      }
+    ]
   }
 ]

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Executive War Room · غرفة عمليات الإدارة</title>
+<link rel="stylesheet" href="app/style.css">
+</head>
+<body>
+<header>
+  <div><h1 id="t_title"></h1><p class="sub" id="t_sub"></p></div>
+  <div class="row noprint"><button class="g" id="lang"></button><button class="g" id="csv"></button><button class="g" id="prn"></button></div>
+</header>
+<main>
+  <section class="card">
+    <h2 id="t_crisis"></h2>
+    <div class="row"><div class="f" style="flex:2"><label id="t_pick"></label><select id="crisis"></select></div>
+      <div class="f" style="justify-content:flex-end"><button class="g" id="reset"></button></div></div>
+    <h3 id="t_dims"></h3>
+    <div class="row" id="dims"></div>
+  </section>
+  <section class="card"><h2 id="t_dec"></h2><div class="kpis" id="kpis"></div></section>
+  <div class="grid2">
+    <section class="card"><h2 id="t_opts"></h2><div class="tw"><table id="opts"></table></div></section>
+    <section class="card"><h2 id="t_votes"></h2><div class="tw"><table id="votes"></table></div></section>
+  </div>
+  <div class="grid2">
+    <section class="card"><h2 id="t_red"></h2><ul class="tight" id="red"></ul></section>
+    <section class="card"><h2 id="t_diss"></h2><ul class="tight" id="diss"></ul></section>
+  </div>
+  <section class="card"><h2 id="t_ex"></h2><p class="note" id="t_exn"></p><div class="tw"><table id="ex"></table></div></section>
+  <section class="card noprint" id="ai"></section>
+  <p class="note" id="t_safe" style="text-align:center"></p>
+</main>
+<footer>Islam El-Sherbiny · <a href="https://github.com/islamelsabahy/ai-executive-war-room">GitHub</a></footer>
+<script src="app/kit.js"></script><script src="app/ai.js"></script><script src="app/data.js"></script><script src="app/warroom.js"></script>
+<script>
+"use strict";
+var T={ar:{title:"غرفة عمليات الإدارة بالذكاء الاصطناعي",sub:"خمسة مديرين افتراضيين بيصوّتوا على أزمة، والـ Red Team بيهاجم القرار قبل ما يتاخد.",crisis:"الأزمة",pick:"اختار سيناريو",reset:"رجّع القيم الأصلية",dims:"شدة الأزمة (حرّك وشوف القرار بيتغير إزاي)",dec:"قرار المجلس",opts:"تقييم البدائل",votes:"تصويت المديرين",red:"اعتراضات الـ Red Team",diss:"سجل الرأي المخالف",ex:"التمرين على مراحل",exn:"كل مرحلة فيها حدث جديد بيغيّر أرقام الأزمة، والمجلس بيعيد التصويت.",
+ rec:"القرار المقترح",cons:"نسبة التوافق",dis:"نسبة الخلاف",conf:"ثقة القرار",rev:"محتاج مراجعة مجلس الإدارة",yes:"نعم",no:"لا",opt:"البديل",score:"درجة المجلس",role:"المدير",vote:"صوته",rconf:"ثقته",obj:"اعتراض",stage:"المرحلة",ev:"الحدث",start:"البداية",csv:"تصدير CSV",prn:"طباعة",none:"لا يوجد",
+ safe:"محاكاة ببيانات وهمية بالكامل. لا يتم تنفيذ أي قرار حقيقي.",
+ f:{severity:"الخطورة",evidence_quality:"جودة الأدلة",customer_impact:"تأثير على العملاء",operational_impact:"تأثير تشغيلي",financial_impact:"تأثير مالي",cyber_risk:"خطر سيبراني",technology_risk:"خطر تقني",urgency:"الإلحاح",unknowns:"المجهول"},
+ h:{severity:"0 = بسيطة، 1 = تهدد استمرار الشركة. فوق 0.7 القرار بيروح لمجلس الإدارة.",evidence_quality:"قد إيه المعلومات اللي في إيدك مؤكدة. لو أقل من 0.65 الـ Red Team بيحذّر من ثقة زيادة.",customer_impact:"قد إيه العملاء متأثرين.",operational_impact:"قد إيه الشغل والتنفيذ متعطل.",financial_impact:"حجم الضغط على الكاش والأرباح.",cyber_risk:"احتمال وجود اختراق أو تسريب.",technology_risk:"قد إيه الأنظمة نفسها معطلة.",urgency:"قد إيه لازم القرار يتاخد بسرعة.",unknowns:"قد إيه فيه حاجات مش معروفة. فوق 0.55 الـ Red Team بيعترض."},
+ roles:{CTO:"مدير التقنية",CFO:"المدير المالي",COO:"مدير العمليات",CISO:"مدير أمن المعلومات",Product:"مدير المنتج"},
+ objs:{irreversible:"البديل المفضل صعب الرجوع فيه",cost:"تكلفته عالية",cyber:"الحماية السيبرانية مش كفاية",customer:"تخفيف أثر العملاء مش كفاية"},
+ reds:{overconfident:"القرار ممكن يكون واثق أكتر من اللازم مقارنةً بجودة الأدلة.",unknowns:"فيه مجاهيل مهمة لسه ما اتحلتش.",irreversible:"البديل المتصدر بيعمل تعرّض صعب الرجوع فيه.",cost:"البديل المتصدر تكلفته عالية مقارنةً بالباقي.",slow:"البديل المتصدر ممكن يكون أبطأ من إلحاح الأزمة.",groupthink:"التوافق الكامل ممكن يعني إن البدائل ما اتدرستش كفاية.",none:"مفيش اعتراض هيكلي كبير؛ اتأكد من افتراضات التنفيذ."},
+ pref:"فضّل"},
+ en:{title:"AI Executive War Room",sub:"Five virtual executives vote on a crisis, and a Red Team attacks the decision before it is made.",crisis:"Crisis",pick:"Choose a scenario",reset:"Reset values",dims:"Crisis intensity (move a slider and watch the decision change)",dec:"Council decision",opts:"Option scoring",votes:"Executive votes",red:"Red Team challenges",diss:"Dissent log",ex:"Staged exercise",exn:"Each stage injects a new event that shifts the crisis, and the council votes again.",
+ rec:"Recommended option",cons:"Consensus",dis:"Dissent",conf:"Decision confidence",rev:"Board review required",yes:"Yes",no:"No",opt:"Option",score:"Council score",role:"Executive",vote:"Vote",rconf:"Confidence",obj:"Objection",stage:"Stage",ev:"Event",start:"Start",csv:"Export CSV",prn:"Print",none:"None",
+ safe:"Fully fictional simulation. No real decision is executed.",
+ f:{severity:"Severity",evidence_quality:"Evidence quality",customer_impact:"Customer impact",operational_impact:"Operational impact",financial_impact:"Financial impact",cyber_risk:"Cyber risk",technology_risk:"Technology risk",urgency:"Urgency",unknowns:"Unknowns"},
+ h:{severity:"0 = minor, 1 = threatens the company. Above 0.7 the decision goes to the board.",evidence_quality:"How confirmed your information is. Below 0.65 the Red Team warns of overconfidence.",customer_impact:"How much customers are affected.",operational_impact:"How much work and delivery are disrupted.",financial_impact:"Pressure on cash and profit.",cyber_risk:"Likelihood of a breach or leak.",technology_risk:"How broken the systems themselves are.",urgency:"How fast the decision must be made.",unknowns:"How much is still unknown. Above 0.55 the Red Team objects."},
+ roles:{CTO:"CTO",CFO:"CFO",COO:"COO",CISO:"CISO",Product:"Product"},
+ objs:{irreversible:"Preferred option is hard to reverse",cost:"High cost",cyber:"Cyber containment may be insufficient",customer:"Customer-impact reduction may be insufficient"},
+ reds:{overconfident:"Decision may be overconfident relative to evidence quality.",unknowns:"Material unknowns remain unresolved.",irreversible:"Leading option creates material irreversible exposure.",cost:"Leading option has high cost relative to other responses.",slow:"Leading option may be too slow for crisis urgency.",groupthink:"Full consensus may indicate insufficient alternative exploration.",none:"No major structural challenge detected; validate execution assumptions."},
+ pref:"preferred"}};
+var $=function(i){return document.getElementById(i)},t=function(k){return T[Kit.lang][k]};
+var cur=null,base=null,STAGES=null;
+function nm(o){return Kit.lang==="ar"&&o.name_ar?o.name_ar:o.name}
+function optName(id){var o=cur.options.filter(function(x){return x.id===id})[0];return o?nm(o):id}
+function fillCrises(){$("crisis").innerHTML=WR_DATA.crises.map(function(c){return '<option value="'+c.crisis_id+'"'+(cur&&cur.crisis_id===c.crisis_id?" selected":"")+'>'+Kit.esc(nm(c))+'</option>'}).join("")}
+function load(id){base=WR_DATA.crises.filter(function(c){return c.crisis_id===id})[0];cur=JSON.parse(JSON.stringify(base));dims();run()}
+function dims(){$("dims").innerHTML=WarRoom.FIELDS.map(function(f){return '<div class="f"><label>'+t("f")[f]+' '+Kit.q(t("h")[f])+' <b id="v_'+f+'">'+Number(cur[f]).toFixed(2)+'</b></label><input type="range" min="0" max="1" step="0.01" data-f="'+f+'" value="'+cur[f]+'"><span class="u">0 – 1</span></div>'}).join("")}
+function pct(x){return Kit.fmt(x,1)+"%"}
+function run(){
+ var views=WarRoom.runAgents(cur,WR_DATA.profiles),d=WarRoom.synthesize(cur,views);
+ $("kpis").innerHTML='<div class="kpi"><span>'+t("rec")+'</span><b style="font-size:17px">'+Kit.esc(optName(d.recommended_option))+'</b></div>'+
+  '<div class="kpi"><span>'+t("cons")+'</span><b>'+pct(d.consensus_score)+'</b></div><div class="kpi"><span>'+t("dis")+'</span><b>'+pct(d.dissent_score)+'</b></div>'+
+  '<div class="kpi"><span>'+t("conf")+'</span><b>'+pct(d.confidence*100)+'</b></div><div class="kpi"><span>'+t("rev")+'</span><b class="'+(d.review_required?"warn":"ok")+'">'+(d.review_required?t("yes"):t("no"))+'</b></div>';
+ var ks=Object.keys(d.option_scores).sort(function(a,b){return d.option_scores[b]-d.option_scores[a]}),mx=Math.max.apply(null,ks.map(function(k){return Math.abs(d.option_scores[k])}))||1;
+ $("opts").innerHTML='<tr><th class="n">'+t("opt")+'</th><th>'+t("score")+'</th><th></th></tr>'+ks.map(function(k){return '<tr><td class="w'+(k===d.recommended_option?' ok':'')+'">'+Kit.esc(optName(k))+'</td><td>'+d.option_scores[k].toFixed(3)+'</td><td><div class="bar"><i style="width:'+Math.max(0,d.option_scores[k]/mx*100).toFixed(0)+'%"></i></div></td></tr>'}).join("");
+ $("votes").innerHTML='<tr><th class="n">'+t("role")+'</th><th class="n">'+t("vote")+'</th><th>'+t("rconf")+'</th></tr>'+views.map(function(v){return '<tr><td class="n">'+t("roles")[v.role]+'</td><td class="w'+(v.recommendation===d.recommended_option?'':' warn')+'">'+Kit.esc(optName(v.recommendation))+(v.objections.length?'<br><span class="note">⚠ '+v.objections.map(function(o){return t("objs")[o]}).join("، ")+'</span>':'')+'</td><td>'+pct(v.confidence*100)+'</td></tr>'}).join("");
+ $("red").innerHTML=d.red_team.map(function(r){return '<li>'+t("reds")[r]+'</li>'}).join("");
+ $("diss").innerHTML=d.dissent_log.length?d.dissent_log.map(function(x){return '<li><b>'+t("roles")[x.role]+'</b>: '+t("pref")+' «'+Kit.esc(optName(x.preferred_option))+'»'+(x.objections.length?' — '+x.objections.map(function(o){return t("objs")[o]}).join("، "):'')+'</li>'}).join(""):'<li>'+t("none")+'</li>';
+ STAGES=WarRoom.exercise(cur,WR_DATA.profiles);
+ $("ex").innerHTML='<tr><th class="n">'+t("stage")+'</th><th class="n">'+t("ev")+'</th><th class="n">'+t("rec")+'</th><th>'+t("cons")+'</th><th>'+t("conf")+'</th></tr>'+STAGES.map(function(s,i){var c=i&&s.decision.recommended_option!==STAGES[i-1].decision.recommended_option;return '<tr><td class="n">'+i+'</td><td class="w">'+(s.inject?Kit.esc(nm(s.inject)):t("start"))+'</td><td class="w'+(c?' warn':'')+'">'+(c?'↻ ':'')+Kit.esc(optName(s.decision.recommended_option))+'</td><td>'+pct(s.decision.consensus_score)+'</td><td>'+pct(s.decision.confidence*100)+'</td></tr>'}).join("");
+ window.__LAST={d:d,views:views};
+}
+function prompt(){var L=window.__LAST,d=L.d,s=[];s.push("Crisis: "+nm(cur));WarRoom.FIELDS.forEach(function(f){s.push(f+": "+Number(cur[f]).toFixed(2))});
+ s.push("Options and council scores: "+Object.keys(d.option_scores).map(function(k){return optName(k)+" = "+d.option_scores[k]}).join("; "));
+ s.push("Votes: "+L.views.map(function(v){return v.role+" -> "+optName(v.recommendation)+" (confidence "+v.confidence+")"}).join("; "));
+ s.push("Recommended: "+optName(d.recommended_option)+"; consensus "+d.consensus_score+"%; dissent "+d.dissent_score+"%; confidence "+d.confidence);
+ s.push("Red team: "+d.red_team.map(function(r){return T.en.reds[r]}).join(" "));
+ s.push("Stages: "+STAGES.map(function(x,i){return i+": "+(x.inject?x.inject.name:"start")+" -> "+optName(x.decision.recommended_option)}).join("; "));
+ s.push("Write a one-page board brief: the decision, why, the strongest dissent, what would change the decision, and the first three actions with owners by role.");return s.join("\n")}
+function render(){Kit.setLang(Kit.lang);["title","sub","crisis","pick","reset","dims","dec","opts","votes","red","diss","ex","exn","csv","prn","safe"].forEach(function(k){var e=$("t_"+k)||$(k);if(e)e.textContent=t(k)});
+ $("lang").textContent=Kit.lang==="ar"?"EN":"ع";fillCrises();dims();run();AI.render()}
+document.addEventListener("input",function(e){var f=e.target.dataset&&e.target.dataset.f;if(f){cur[f]=+e.target.value;$("v_"+f).textContent=cur[f].toFixed(2);run()}});
+$("crisis").onchange=function(){load(this.value)};$("reset").onclick=function(){load(base.crisis_id)};
+$("lang").onclick=function(){Kit.lang=Kit.lang==="ar"?"en":"ar";render()};$("prn").onclick=function(){print()};
+$("csv").onclick=function(){var rows=[["stage","event","recommended","consensus_pct","dissent_pct","confidence"]];STAGES.forEach(function(s,i){rows.push([i,s.inject?nm(s.inject):"start",optName(s.decision.recommended_option),s.decision.consensus_score,s.decision.dissent_score,s.decision.confidence])});Kit.csv(rows,"war-room-"+cur.crisis_id+".csv")};
+var AI=AIPanel.mount($("ai"),{lang:function(){return Kit.lang},system:"You are the chair of an executive council writing a board brief from a deterministic simulation.",prompt:prompt});
+Kit.initTips();cur=WR_DATA.crises.filter(function(c){return c.crisis_id==="egp-devaluation"})[0]||WR_DATA.crises[0];load(cur.crisis_id);render();
+</script>
+</body>
+</html>
