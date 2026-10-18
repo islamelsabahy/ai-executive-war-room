@@ -77,3 +77,8 @@ This repository must never contain real company, customer, employee, project, co
 ## Author
 
 Eng. Islam El-Sherbiny
+
+## Limitations
+- Demonstration tool built on **fictional sample data**. Outputs are decision support, not legal, tax or investment advice.
+- Results depend on the assumptions you enter; check them against your own numbers before relying on them.
+- Browser-only: nothing is sent to a server by this tool. See [SECURITY.md](SECURITY.md).
